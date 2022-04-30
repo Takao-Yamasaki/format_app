@@ -1,20 +1,21 @@
 class FormatsController < ApplicationController
   def index
-    @formats = Company.all
+    @formats = Company.includes(:user)
   end
 
   def new
-    @format = Company.new
+    @format = CompanyUser.new
   end
 
   def create
-    @format = Company.create(format_params)
+    @format = CompanyUser.new(format_params)
+    @format.save
     redirect_to root_path
   end
 
   private
 
   def format_params
-    params.require(:company).permit(:company_name, :address)
+    params.require(:company_user).permit(:company_name, :address, :user_name, :email, :password, :password_confirmation)
   end
 end
