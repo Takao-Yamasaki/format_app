@@ -1,0 +1,13 @@
+h1 企業一覧
+
+= link_to '新規作成', new_company_path 
+
+- @formats.each do |format|
+  h2 企業一覧
+  = format.id 
+  = format.company_name 
+  = format.address
+
+  h2 ユーザー一覧
+  = format.user_name 
+  = format.email 
