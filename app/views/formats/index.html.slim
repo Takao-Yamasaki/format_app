@@ -9,5 +9,6 @@ h1 企業一覧
   = format.address
 
   h2 ユーザー一覧
-  = format.user.user_name 
-  = format.user.email 
+  - format.user.each do |u|
+    = u.user_name 
+    = u.email 
