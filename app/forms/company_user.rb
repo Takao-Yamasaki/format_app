@@ -5,13 +5,14 @@ class CompanyUser
   # 参照更新用
   attr_accessor :company_name, :address, :user_name, :email, :password, :password_confirmation
 
+  # 空でない
   with_options presence: true do
     # Companyモデルのバリデーション
     validates :company_name
     validates :address
     # Userモデルのバリデーション
     validates :user_name
-    validates :email
+    validates :email, uniqueness: true
     validates :password_digest
   end
 

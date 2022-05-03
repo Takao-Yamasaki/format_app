@@ -24,6 +24,7 @@ table.table
     th company_id
   tbody
   - @formats.each do |format|
+    tr
     - format.user.each do |u|
       td= u.id 
       td= u.user_name 
