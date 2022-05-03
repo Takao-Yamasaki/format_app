@@ -11,8 +11,12 @@ class FormatsController < ApplicationController
 
   def create
     @format = CompanyUser.new(format_params)
-    @format.save
-    redirect_to root_path
+    if @format.save
+      redirect_to root_path, notice: '登録に成功しました'     
+    else
+      flash[:alert] = '登録に失敗しました'
+      render :new
+    end
   end
   
   private
