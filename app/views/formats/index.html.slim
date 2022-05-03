@@ -1,0 +1,32 @@
+h1 登録一覧
+
+= link_to '新規作成', new_format_path 
+
+h2 企業一覧
+table.table
+  thead
+    th id
+    th name 
+    th address
+  tbody  
+  - @formats.each do |format|
+    tr
+      td= format.id 
+      td= format.company_name 
+      td= format.address
+
+h2 ユーザー一覧
+table.table
+  thead 
+    th id
+    th name 
+    th email
+    th company_id
+  tbody
+  - @formats.each do |format|
+    tr
+    - format.user.each do |u|
+      td= u.id 
+      td= u.user_name 
+      td= u.email
+      td= u.company_id 
