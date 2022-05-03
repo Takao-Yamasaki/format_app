@@ -1,8 +1,9 @@
 class CompanyUser
   # 擬似モデル
   include ActiveModel::Model
+  include ActiveRecord::AttributeAssignment
   # 参照更新用
-  attr_accessor :company_name, :address, :use_name, :email, :password, :password_confirmation
+  attr_accessor :company_name, :address, :user_name, :email, :password, :password_confirmation
 
   with_options presence: true do
     # Companyモデルのバリデーション

@@ -1,9 +1,9 @@
-= link_to '企業一覧', companies_path
+= link_to '企業一覧', formats_path
 
 = form_with model: @format, url: formats_path, local: true do |f|
   / エラーメッセージの表示
   / modelという変数にf.objectを渡している
-  = render 'layouts/error_messages', model: f.object
+  / = render 'layouts/error_messages', model: f.object
 
   / 企業情報
   h1 企業情報
