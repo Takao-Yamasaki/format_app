@@ -18,6 +18,8 @@ class CompanyUser
   def save
     # Companyを保存
     company = Company.create(company_name: company_name, address: address)
+    # ブレークポイントの設置
+    # binding.pry
     # Userを保存
     User.create(user_name: user_name, email: email, password_digest: password, company_id: company.id)
   end

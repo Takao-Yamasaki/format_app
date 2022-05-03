@@ -1,4 +1,4 @@
 class Company < ApplicationRecord
   # アソシエーションの設定
-  belongs_to :user
+  has_one :user
 end
